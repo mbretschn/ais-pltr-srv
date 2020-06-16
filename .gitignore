@@ -1,0 +1,18 @@
+.DS_Store
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+/node_modules
+/coverage
+/config/env/production.json
+/config/env/debug.json
+/logs
+Notes.ts

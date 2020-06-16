@@ -1,0 +1,24 @@
+{
+    "database": {
+        "url": "mongodb://127.0.0.1:61126",
+        "options": {
+            "useNewUrlParser": true,
+            "useUnifiedTopology": true
+        },
+        "dbName": "",
+        "sender": ""
+    },
+    "http": {
+        "port": 4000
+    },
+    "logger": {
+        "level": "warn",
+        "filter": 0,
+        "filename": ""
+    },
+    "ssh": {
+        "enabled": true,
+        "forward": "61126:127.0.0.1:61126",
+        "host": "***"
+    }
+}
