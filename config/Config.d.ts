@@ -23,7 +23,6 @@ interface Database {
   url: string;
   options: Options;
   dbName: string;
-  sender: string;
 }
 interface Options {
   useNewUrlParser: boolean;

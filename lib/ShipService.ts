@@ -10,18 +10,9 @@ export const ShipService = (server: AISPLTRServer): Router => {
 
     router.get('/api/ships', async (req: Request, res: Response, next: NextFunction) => {
         const filter  = getFilter(req.query.filter)
-        const limit   = Number(req.query.limit) || 0
+        const limit   = Number(req.query.limit) || (Object.keys(filter).length < 1 ? 500 : 0)
         try {
             const data = await ships.fetch(filter, limit)
-            res.json(data)
-        } catch (err) {
-            next(err)
-        }
-    })
-
-    router.get('/api/ship', async (req: Request, res: Response, next: NextFunction) => {
-        try {
-            const data = await ships.find(getFilter(req.query.filter))
             res.json(data)
         } catch (err) {
             next(err)

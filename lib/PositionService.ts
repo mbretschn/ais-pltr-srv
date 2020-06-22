@@ -10,8 +10,8 @@ export const PositionService = (server: AISPLTRServer): Router => {
 
     router.get('/api/positions', async (req: Request, res: Response, next: NextFunction) => {
         const filter  = getFilter(req.query.filter)
-        const limit   = Number(req.query.limit) || 0
         const options = getOptions(req.query.options)
+        const limit   = Number(req.query.limit) || (Object.keys(filter).length < 1 ? 500 : 0)
         try {
             const data = await positions.fetch(filter, limit, options)
             res.json(data)

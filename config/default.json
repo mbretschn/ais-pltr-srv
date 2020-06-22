@@ -5,8 +5,7 @@
             "useNewUrlParser": true,
             "useUnifiedTopology": true
         },
-        "dbName": "",
-        "sender": ""
+        "dbName": ""
     },
     "http": {
         "port": 4000
