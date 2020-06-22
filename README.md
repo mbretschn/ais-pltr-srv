@@ -2,6 +2,8 @@
 
 AIS PLTR SRV ist a REST/Websocket Backend used by the AIS-PLTR Chartplotter front end.
 
+Visit https://blog.3epnm.de/ for more Details and https://ais.3epnm.de/ for a demo
+
 ## About
 AIS-PLTR is intended to be the simplest possible AIS chart plotter where ship positions can be displayed. This project covers the backend for AIS-PLTR.
 
