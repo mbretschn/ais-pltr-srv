@@ -1,6 +1,6 @@
 # AIS PLTR SRV
 
-AIS PLTR SRV ist a REST/Websocket Backend used by the AIS-PLTR Chartplotter front end.
+AIS PLTR SRV is a REST/Websocket Backend used by the AIS-PLTR Chartplotter front end.
 
 Visit https://blog.3epnm.de/ for more Details and https://ais.3epnm.de/ for a demo
 
