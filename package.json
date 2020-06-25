@@ -1,6 +1,6 @@
 {
   "name": "ais-pltr-srv",
-  "version": "0.9.15",
+  "version": "0.9.17",
   "description": "API PLTR SRV offers a Backend for AIS PLTR.",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "@types/uuid": "^7.0.3",
     "ts-node": "^8.10.1",
-    "ais-tools": "^0.9.15",
+    "ais-tools": "^0.9.17",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "moment": "^2.24.0",
