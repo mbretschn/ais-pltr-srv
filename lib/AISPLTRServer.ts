@@ -1,11 +1,13 @@
 import { default as express, Request, Response, NextFunction } from 'express'
 import { MessageLogger } from 'ais-tools'
 import { Server } from 'http'
-import { Subscriptions, ImageService, ShipService, PositionService, SocketService, HealthService, SSHTunnel } from './index'
+import { Subscriptions, ImageService, ShipService, PositionService, SocketService, HealthService, SSHTunnel, AuthService } from './index'
 import { EventEmitter } from 'events'
+// import { default as passport } from 'passport'
+// import { default as cognito } from 'passport-cognito'
 
 export class AISPLTRServer extends EventEmitter {
-    private config: any
+    public config: any
 
     public app: express.Express
     public http: Server
@@ -71,6 +73,7 @@ export class AISPLTRServer extends EventEmitter {
                 this.teardown()
             })
 
+            AuthService(this)
             SocketService(this)
 
             await this.database.run()

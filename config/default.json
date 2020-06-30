@@ -19,5 +19,10 @@
         "enabled": true,
         "forward": "61126:127.0.0.1:61126",
         "host": "***"
+    },
+    "cognito": {
+        "userPoolId": "",
+        "clientId": "",
+        "region": ""
     }
 }
