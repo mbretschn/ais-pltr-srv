@@ -5,6 +5,24 @@ interface Config {
   http: Http;
   logger: Logger;
   ssh: Ssh;
+  cognito: Cognito;
+}
+interface Cognito {
+  poolData: PoolData;
+  keys: Key[];
+}
+interface Key {
+  alg: string;
+  e: string;
+  kid: string;
+  kty: string;
+  n: string;
+  use: string;
+  pem: string;
+}
+interface PoolData {
+  UserPoolId: string;
+  ClientId: string;
 }
 interface Ssh {
   enabled: boolean;

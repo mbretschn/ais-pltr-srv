@@ -1,23 +1,38 @@
-import { default as express, Request, Response, NextFunction } from 'express'
+import { default as express, Request, Response, Router } from 'express'
 import { AISPLTRServer } from './index'
 
-import { default as fetch } from 'node-fetch'
-(global as any).fetch = fetch
+export const AuthService = (server: AISPLTRServer): Router => {
+    const router = Router()
+    router.use(express.json())
 
-import { default as passport } from 'passport'
-import { default as CognitoStrategy } from 'passport-cognito'
-
-export const AuthService = (server: AISPLTRServer): any => {
-    passport.use(new CognitoStrategy(server.config.cognito,
-        (accessToken, idToken, refreshToken, user, cb) => {
-            console.log(accessToken, idToken, refreshToken, user)
-            process.nextTick(function () {
-                cb(null, user)
-            })
+    router.post('/auth/login', async (req: Request, res: Response) => {
+        try {
+            const tokens = await server.auth.Login(req.body) as any
+            res.json(Object.assign(tokens, await server.auth.Verify(tokens.access)))
+        } catch (ex) {
+            server.logger.warn('Auth Error', req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+            res.status(401).send(ex.message)
         }
-    ))
-
-    server.app.post('/auth', passport.authenticate('cognito'), (req: Request, res: Response, next: NextFunction) => {
-        console.log('?')
     })
+
+    router.post('/auth/refresh', async (req: Request, res: Response) => {
+        try {
+            const tokens = await server.auth.Refresh(req.body.Username, req.body.Token) as any
+            res.json(Object.assign(tokens, await server.auth.Verify(tokens.access)))
+        } catch (ex) {
+            server.logger.warn('Auth Error', req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+            res.status(401).send(ex.message)
+        }
+    })
+
+    router.post('/auth/verify', async (req: Request, res: Response) => {
+        try {
+            res.json(await server.auth.Verify(req.body.Token))
+        } catch (ex) {
+            server.logger.warn('Auth Error', req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+            res.status(401).send(ex.message)
+        }
+    })
+
+    return router
 }

@@ -21,8 +21,10 @@
         "host": "***"
     },
     "cognito": {
-        "userPoolId": "",
-        "clientId": "",
-        "region": ""
+        "poolData": {
+            "UserPoolId": "",
+            "ClientId": ""
+        },
+        "keys": [ ]
     }
 }
