@@ -1,6 +1,6 @@
 {
   "name": "ais-pltr-srv",
-  "version": "0.9.18",
+  "version": "0.9.19",
   "description": "API PLTR SRV offers a Backend for AIS PLTR.",
   "main": "index.js",
   "scripts": {
@@ -25,15 +25,26 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/jwk-to-pem": "^2.0.0",
     "@types/uuid": "^7.0.3",
-    "ts-node": "^8.10.1",
     "ais-tools": "^0.9.18",
+    "amazon-cognito-identity-js": "^4.3.2",
+    "aws-sdk": "^2.708.0",
+    "cross-fetch": "^3.0.5",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.4",
     "moment": "^2.24.0",
     "node-config-ts": "2.3.1",
     "node-fetch": "^2.6.0",
+    "npm": "^6.14.5",
+    "passport": "^0.4.1",
+    "passport-custom": "^1.1.1",
     "socket.io": "^2.3.0",
+    "ts-node": "^8.10.1",
     "uuid": "^8.0.0"
   }
 }
