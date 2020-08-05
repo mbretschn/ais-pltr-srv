@@ -33,7 +33,7 @@
     "aws-sdk": "^2.708.0",
     "cross-fetch": "^3.0.5",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.7-alpha.3",
+    "express-fileupload": "^1.1.9",
     "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "jwk-to-pem": "^2.0.4",
