@@ -30,7 +30,7 @@
     "@types/uuid": "^7.0.3",
     "ais-tools": "^0.9.18",
     "amazon-cognito-identity-js": "^4.3.2",
-    "aws-sdk": "^2.708.0",
+    "aws-sdk": "^2.814.0",
     "cross-fetch": "^3.0.5",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
